@@ -1,0 +1,40 @@
+.dashboard-container {
+  display: flex; /* Centering the card */
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh; /* Full viewport height for vertical centering */
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 20px; /* Padding around the container */
+}
+
+.paragraph-class {
+  text-align: center;
+  width: 1000px;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px; /* Space below the title */
+  font-size: 2rem; /* Larger title */
+  color: #333; /* Darker title color */
+  font-weight: bold; /* Bold title for emphasis */
+}
+
+.chart-card {
+  background-color: #ffffff; /* White background for the card */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px; /* Padding inside the card */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 800px; /* Maximum width for larger screens */
+}
+
+.recharts-tooltip {
+  border-radius: 5px; /* Rounded corners for tooltip */
+}
+
+.recharts-tooltip:hover {
+  background-color: #e8f5e9; /* Subtle change on hover */
+}
