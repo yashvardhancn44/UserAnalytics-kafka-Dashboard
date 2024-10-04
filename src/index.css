@@ -10,7 +10,18 @@
 
 .paragraph-class {
   text-align: center;
-  width: 1000px;
+  width: 80%;
+}
+
+.refresh-button {
+  background-color: lightblue;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+}
+.refresh-button:hover {
+  background-color: rgb(124, 124, 212);
+  cursor: pointer;
 }
 
 .dashboard-title {

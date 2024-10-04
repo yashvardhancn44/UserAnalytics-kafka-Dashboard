@@ -34,6 +34,26 @@ const App = () => {
 
   const [products, setProducts] = useState([]);
 
+  const refreshHandler = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/reset", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to reset products.");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setProducts(data);
+    } catch (error) {
+      console.error("Error refreshing products:", error);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("http://localhost:3000/api/products");
@@ -67,13 +87,16 @@ const App = () => {
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">Real-Time User Interation Analytics</h1>
-      <p className="paragraph-class">
+      <div className="paragraph-class">
         When you mousehover on a product for more than 3 sec, it is considered
         as a view. when you click on the buy button, it is considered as a buy.
         The project gives insights on the views over a product vis-a-vis buys,
         giving insights to business to make decisions on devising strategies to
         increase buying behaviour of customers.
-      </p>
+      </div>
+      <button className="refresh-button" onClick={refreshHandler}>
+        Reset views and clicks
+      </button>
       <div className="chart-card">
         <ResponsiveContainer width="100%" height={400}>
           <BarChart
